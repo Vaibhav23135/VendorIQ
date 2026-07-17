@@ -41,8 +41,14 @@
         }
       ],
       "tags": ["calculator", "math", "result"]
+    },
+    {
+      "uri": "/vendor-ranking",
+      "name": "Vendor Ranking",
+      "description": "Displays a ranked list of vendors based on performance metrics",
+      "examples": [],
+      "tags": ["vendor", "ranking", "business"]
     }
   ],
   "generatedAt": "2025-01-01T00:00:00.000Z"
 }
-
