@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "integrations": {
+    "database": [
+      {
+        "provider": "mongodb",
+        "envKey": "MONGODB_URI",
+        "database": "VendorIQ",
+        "addedAt": 1784276311976
+      }
+    ],
+    "auth": [],
+    "storage": [],
+    "functions": [],
+    "tools": []
+  }
+}
