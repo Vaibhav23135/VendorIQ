@@ -14,6 +14,12 @@ export interface VendorDocument extends mongoose.Document {
   complianceStatus: 'certified' | 'pending' | 'flagged';
   imageUrl: string;
   city: string;
+  /** Units vendor can supply per month across all orders */
+  monthlyCapacity: number;
+  /** Units currently in stock / readily available */
+  currentStock: number;
+  /** Base lead time for small orders (≤ currentStock) in days */
+  leadTimeBaseDays: number;
   notes?: string;
 }
 
@@ -30,6 +36,9 @@ const VendorSchema = new Schema<VendorDocument>(
     complianceStatus: { type: String, required: true, enum: ['certified', 'pending', 'flagged'] },
     imageUrl: { type: String, required: true },
     city: { type: String, required: true },
+    monthlyCapacity: { type: Number, required: true, default: 200 },
+    currentStock: { type: Number, required: true, default: 50 },
+    leadTimeBaseDays: { type: Number, required: true, default: 14 },
     notes: { type: String },
   },
   { timestamps: true, collection: 'vendor_master' }

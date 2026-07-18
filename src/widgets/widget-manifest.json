@@ -46,7 +46,74 @@
       "uri": "/vendor-ranking",
       "name": "Vendor Ranking",
       "description": "Displays a ranked list of vendors based on performance metrics",
-      "examples": [],
+      "examples": [
+        {
+          "name": "Laptop Sourcing Sceanrio",
+          "description": "Sourcing candidate list for 100 enterprise laptops with a ₹55 Lakh budget",
+          "data": {
+            "intake": {
+              "item": "Dell Latitude Laptop",
+              "category": "IT Hardware",
+              "quantity": 100,
+              "budgetInr": 5500000,
+              "deadline": "2026-08-15"
+            },
+            "candidates": [
+              {
+                "vendorId": "V-DELL-01",
+                "name": "Dell Technologies India",
+                "category": "IT Hardware",
+                "imageUrl": "https://images.unsplash.com/photo-1742119897876-67e9935ac375?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+                "city": "Bengaluru",
+                "unitPrice": 52000,
+                "deliveryDays": 12,
+                "effectiveDeliveryDays": 12,
+                "costScore": 76,
+                "deliveryScore": 92,
+                "qualityScore": 91,
+                "complianceScore": 96,
+                "finalScore": 86,
+                "rank": 1,
+                "dataGaps": [],
+                "certifications": ["ISO 9001", "ISO 14001", "EPEAT Gold"],
+                "complianceFlags": [],
+                "advisories": []
+              },
+              {
+                "vendorId": "V-HP-01",
+                "name": "HP Enterprise Solutions",
+                "category": "IT Hardware",
+                "imageUrl": "https://images.unsplash.com/photo-1576057122708-9608db46b2f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+                "city": "Gurugram",
+                "unitPrice": 49500,
+                "deliveryDays": 9,
+                "effectiveDeliveryDays": 9,
+                "costScore": 81,
+                "deliveryScore": 96,
+                "qualityScore": 87,
+                "complianceScore": 91,
+                "finalScore": 85,
+                "rank": 2,
+                "dataGaps": [],
+                "certifications": ["ISO 9001", "RoHS"],
+                "complianceFlags": [],
+                "advisories": []
+              }
+            ],
+            "topVendorId": "V-DELL-01",
+            "scenarioUsed": "default",
+            "weightsApplied": {
+              "cost": 0.35,
+              "delivery": 0.25,
+              "quality": 0.20,
+              "compliance": 0.20
+            },
+            "splitOrderSuggestion": null,
+            "budgetAdvisory": null,
+            "message": "Ranked 2 vendor(s) for Laptop. Top pick: Dell Technologies India."
+          }
+        }
+      ],
       "tags": ["vendor", "ranking", "business"]
     }
   ],

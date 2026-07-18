@@ -5,18 +5,20 @@ import { VendorPerformanceModel } from './schemas/vendor-performance.schema.js';
 import { ComplianceModel } from './schemas/compliance.schema.js';
 import { HistoricalContractModel } from './schemas/historical-contract.schema.js';
 import { MarketPriceModel } from './schemas/market-price.schema.js';
+import { ProductModel } from './schemas/product.schema.js';
 import {
   SEED_VENDORS,
   SEED_PERFORMANCE,
   SEED_COMPLIANCE,
   SEED_CONTRACTS,
   SEED_MARKET_PRICES,
+  SEED_PRODUCTS,
 } from './seed.data.js';
 
 /**
  * SeedService
  *
- * Idempotently seeds the VendorIQ demo collections on module init if they
+ * Idempotently seeds all VendorIQ demo collections on module init if they
  * are empty. Safe to call multiple times — each collection is only
  * populated when its count is 0.
  */
@@ -63,6 +65,11 @@ export class SeedService {
       await MarketPriceModel.insertMany(
         SEED_MARKET_PRICES.map((m) => ({ ...m, asOfDate: new Date(m.asOfDate) }))
       );
+    }
+
+    const productCount = await ProductModel.countDocuments();
+    if (productCount === 0) {
+      await ProductModel.insertMany(SEED_PRODUCTS);
     }
 
     this.seeded = true;
